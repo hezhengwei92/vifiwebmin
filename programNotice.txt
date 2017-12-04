@@ -1,0 +1,31 @@
+1.VO中使用Integer,而不是int类型
+	因为int有默认值0，编辑时若没有设置值，都会设回0
+2.@PathVariable出现点号"."时导致路径参数截断获取不全的解决办法
+	下载日志时出现的问题：
+	方法1：在完整字段后增加一个静态的字符段，这个段没有任何意义，可以为任意字符。这样需要的字段就被包裹起来，就不会被截断了。
+	方法2：在@RequestMapping的value中使用SpEL来表示，value中的{version}换成{version:.+}。
+	http://stackoverflow.com/questions/3526523/spring-mvc-pathvariable-getting-truncated
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

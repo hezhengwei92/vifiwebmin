@@ -1,0 +1,28 @@
+
+1.代理商下拉框数据
+	@Autowired
+	AgentService agentService;
+    view.put("agentSelData", agentService.getAgentSelData());
+2.地区编号
+	@Autowired
+    AreaService areaService;
+	view.put("areaSelData", areaService.getAreaSelData());
+3.uuwifi设备
+	@Autowired
+	ViFiDeviceService viFiDeviceService;
+	view.put("viFiDeviceSelData", viFiDeviceService.getViFiDeviceSelData());
+4.uuwifi设备组
+	@Autowired
+	ViFiDevGroupService viFiDevGroupService;
+	view.put("viFiDevGrpSelData", viFiDevGroupService.getDevGroupSelData());
+5.simcardGroup流量卡组
+	@Autowired
+	SCGroupService sCGroupService;
+	view.put("sCGroupSelData", sCGroupService.getSCGroupSelData());
+	
+	
+	
+	
+	
+	
+	

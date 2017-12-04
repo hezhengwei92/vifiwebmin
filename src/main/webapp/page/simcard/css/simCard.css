@@ -1,0 +1,85 @@
+
+
+/* ***  地区显示   */
+.coverage .icon {
+    background-size: 100%;
+    width: 68px;
+    height: 45px;
+}
+.coverage .databox .databox-left {
+    width: 88px;
+}
+.coverage .databox .databox-right {
+    width: calc(100% - 88px);
+}
+
+
+
+/* *** 国家地区*/
+.country-icon-America {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-america.jpg);
+}
+
+.country-icon-Egypt {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-egypt.png);
+}
+
+.country-icon-Africa {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-southAfrica.jpg);
+}
+
+.country-icon-Germany {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-germany.jpg);
+}
+
+.country-icon-England {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-england.jpg);
+}
+
+.country-icon-Singapore {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-singapore.jpg);
+}
+
+.country-icon-Thailand {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-thailand.jpg);
+}
+
+.country-icon-Russia {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-russia.jpg);
+}
+
+.country-icon-Japan {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-japan.jpg);
+}
+
+.country-icon-Korea {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-korea.jpg);
+}
+
+.country-icon-HongKong {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-hongkong.jpg);
+}
+
+.country-icon-Macao {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-macao.jpg);
+}
+
+.country-icon-China {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-china.jpg);
+}
+
+.country-icon-Taiwan {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-taiwan.jpg);
+}
+
+.country-icon-SriLanka {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-srilanka.jpg);
+}
+
+.country-icon-Maldives {
+    background-image: url(../../../assets/images/simcard_simcard/coverage/country-maldives.png);
+}
+
+
+
+

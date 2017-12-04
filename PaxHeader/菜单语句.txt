@@ -1,0 +1,6 @@
+57 path=vifiwebmin-20160930/èåè¯­å¥.txt
+20 ctime=1475231401
+20 atime=1475231401
+23 SCHILY.dev=16777219
+23 SCHILY.ino=11438095
+18 SCHILY.nlink=1

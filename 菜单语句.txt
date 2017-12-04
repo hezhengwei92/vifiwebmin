@@ -1,0 +1,12 @@
+
+INSERT tbCfrmResource VALUES('/goip/goIPDevNew','goip_goIPDevNew','05-03',NULL,'0|1|0','_EUROOT','2016-4-14 13:22:00','_EUROOT','2016-4-14 13:22:00');
+INSERT tbCfrmResource VALUES('/simp/simPDevNew','simp_simPDevNew','06-03',NULL,'0|1|0','_EUROOT','2016-4-14 13:22:00','_EUROOT','2016-4-14 13:22:00');
+INSERT tbCfrmResource VALUES('/uuwifi/viFiDeviceNew','uuwifi_viFiDeviceNew','07-05',NULL,'0|1|0','_EUROOT','2016-4-14 13:22:00','_EUROOT','2016-4-14 13:22:00');
+INSERT tbCfrmResource VALUES('/cdr/cdrNew','cdr_cdrNew','12-4',NULL,'0|1|0','_EUROOT','2016-4-14 13:22:00','_EUROOT','2016-4-14 13:22:00');
+INSERT tbCfrmResource VALUES('/cdr/cdrTariffe','cdr_cdrTariffe','12-5',NULL,'0|1|0','_EUROOT','2016-4-20 13:22:00','_EUROOT','2016-4-20 13:22:00');
+INSERT tbCfrmResource VALUES('/uuwifi/globalSIMNew','uuwifi_globalSIMNew','07-06',NULL,'0|1|0','_EUROOT','2016-4-23 13:22:00','_EUROOT','2016-4-23 13:22:00');
+
+
+
+tips:
+1.增加页面时可能需要加上iconClass类。每个栏目的图标，来源于栏目中子目录的第一项的iconClass类（resource表），如果没有图标可能不显示。

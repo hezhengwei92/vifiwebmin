@@ -1,0 +1,78 @@
+.goip-port-color-sta-0 {
+    background-color: red;
+}
+.goip-port-color-sta-1 {
+    background-color: orange ;
+}
+.goip-port-color-sta-2 {
+    background-color: yellow;
+}
+.goip-port-color-sta-3 {
+    background-color: green;
+}
+.goip-port-color-sta-4 {
+    background-color: cyan;
+}
+.goip-port-color-sta-5 {
+    background-color: blue;
+}
+.goip-port-color-sta-6 {
+    background-color: purple;
+}
+.goip-port-color-sta-7 {
+    background-color: black;
+}
+.goip-port-color-sta-8 {
+    background-color: white;
+}
+.goip-port-color-sta-9 {
+    background-color: springgreen;
+}
+.goip-port-color-sta-10 {
+    background-color: rebeccapurple;
+}
+
+
+
+/********************* SimPDev 状态图形数据展示..******************************/
+.goip-dev-shelf {
+    /*background-color: #EBEBEB;*/
+    display: inline-block;
+}
+
+.goip-dev-shelf > div {
+    margin: 0 25px 0 25px;
+    padding: 25px 0 25px 0;
+    background-color: white;
+}
+
+.goip-dev-shelf, .goip-dev-shelf > div {
+    border-left: 3px solid gray;
+    border-right: 3px solid gray;
+}
+
+.goip-dev {
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    background-color: #DDD;
+    padding: 10px 15px 12px 15px;
+    margin-bottom: 5px;
+
+}
+
+.goip-dev td {
+    position: relative;
+    height: 20px;
+}
+
+.goip-dev td:hover {
+    cursor: pointer;
+}
+
+.goip-col-num {
+    text-align: center;
+    padding-left: 10px;
+    width: 40px;
+}
+
+

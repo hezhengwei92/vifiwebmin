@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
+        default-lazy-init="true">
+
+    <description>ShiroSecurity Settings</description>
+
+    <!-- 角色权限控制 -->
+    <bean name="frameRolesFilter" class="com.frame.security.FrameOrRolesAuthorizationFilter"/>
+    <!-- 接口token控制 -->
+    <bean name="frameRateTokenFilter" class="com.frame.security.FrameRastTokenAuthorizationFilter"/>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" depends-on="frameRolesFilter">
+
+        <!-- shiro的核心安全接口 -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 要求登录时的链接 -->
+        <property name="loginUrl" value="/login"/>
+        <!-- 登陆成功后要跳转的连接 -->
+        <property name="successUrl" value="/index"/>
+        <!-- 未授权时要跳转的连接 -->
+        <property name="unauthorizedUrl" value="/state/302"/>
+        <!-- shiro连接约束配置 -->
+
+        <property name="filters">
+            <map>
+                <entry key="orroles" value-ref="frameRolesFilter"/>
+                <entry key="rateToken" value-ref="frameRateTokenFilter"/>
+            </map>
+        </property>
+        <!-- shiro连接约束配置,在这里使用自定义的动态获取资源类 -->
+        <property name="filterChainDefinitionMap" ref="frameChainDefinitionSectionMetaSource"/>
+    </bean>
+
+    <bean name="frameChainDefinitionSectionMetaSource" class="com.frame.security.FrameChainDefinitionSectionMetaSource">
+        <property name="filterChainDefinitions">
+            <value>
+                /assets/** = anon <!-- static assets file chains   -->
+                /state/** = anon  <!-- 网页各种状态页,302 -->
+                /login = authc
+                /logout = logout
+                /syslog/fs = authc  <!-- 文件日志模块,view访问 放行 -->
+                /home = authc  <!-- 欢迎页,登陆用户都可访问 -->
+                /fileUpload/** = authc  <!-- 文件上传功能,登陆即可 -->
+                /ws/** = anon  <!-- WS接口单独使用用户名和密码控制 -->
+                /vpx/statistics* = rateToken   <!-- 参数需要带有特定token -->
+                /vifiAsStatistics.html = anon   <!-- as 统计放行!!! -->
+            </value>
+        </property>
+    </bean>
+
+    <bean id="frameShiroAuthorizingRealm" class="com.frame.security.FrameShiroAuthorizingRealm">
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="MD5"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:/ehcache-shiro.xml"/>
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="frameShiroAuthorizingRealm"/>
+        <property name="cacheManager" ref="shiroEhcacheManager"/>
+    </bean>
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+</beans>
