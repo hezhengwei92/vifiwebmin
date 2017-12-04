@@ -1,0 +1,968 @@
+﻿
+:focus {
+    outline: none;
+}
+
+.font9 {
+    -webkit-text-size-adjust: none;
+    font-size: 9px !important;;
+}
+
+.font14 {
+    font-size: 14px !important;
+}
+
+/* *** 弹窗大小 */
+.modal-lg {
+    width: 90vw;
+    height: 90vh;
+}
+
+/* 解决laydate 和 beyond 的样式冲突*/
+#laydate_box, #laydate_box * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/* 可点击的状态样式 */
+.clickable-bg {
+    border: 1px solid transparent;
+}
+
+.clickable-bg:hover {
+    border: 1px solid #B9B9B9;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/** ***
+ * tips 通用的提示气泡 , 用法: <div class="f-p-tips"> <i class="f-tips">我是提示</i></div>
+ * f-tips   : 在下方
+ * f-t-tips : 在上方
+ */
+@keyframes fTipsFadeIn {/* @keyframes 声明一个动画 代表从哪里滑动到哪里 opacity:0 完全透明  transform:translateY(10px) 纵坐标上下移10px*/
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.f-p-tips {
+    position: relative;/* relative 相对 */
+    overflow: visible !important;/*overflow: visible超出的部分显示在外部  !important的css定义是拥有最高的优先级的 */
+}
+/* :hover 指针浮在其元素上时触发
+当指针浮在.f-p-tips上时触发 .f-tips*/
+.f-p-tips:hover .f-tips, .f-p-tips:hover .f-t-tips {
+    display: block;
+    animation: fTipsFadeIn 0.5s; /* 元素和动画绑定 过程时间为0.5s */
+}
+
+.f-tips, .f-t-tips {
+    white-space: nowrap;/* 句子不换行 */
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    font-style: normal;
+    background-color: #36c;/*背景色*/
+    color: white;/*字体颜色*/
+    border-radius: 4px;
+    padding: 3px 8px;
+}
+
+.f-t-tips {
+    top: -20px;
+}
+
+/*箭头指向*/
+.f-tips:before, .f-t-tips:before {
+    z-index: 9999;
+    position: absolute;
+    top: -7px;
+    left: 4px;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-width: 0 5px 7px;
+    border-style: none solid solid;
+    border-color: transparent transparent #3366cc;
+}
+
+.f-t-tips:before {
+    border-width: 7px 5px 0;
+    border-style: solid solid none;
+    border-color: #3366cc transparent transparent;
+    top: 23px;
+}
+
+/* *** table 头部工具 栏 */
+.head-tools-r {
+    float: right;
+    padding: 3px;
+    margin: 0;
+}
+
+.head-tools-r > * {
+    display: inline-block;
+}
+
+.head-tools-r .btn-circle {
+    padding: 5px 6px !important;
+}
+
+.head-tools-r .btn-circle:hover {
+    color: #2DC3E8;
+    border-color: #2DC3E8;
+}
+
+.head-tools-r .dropdown-menu {
+    margin-top: 0;
+}
+
+/* *** table 底部工具栏  */
+.foot-tools {
+    margin: 0;
+    padding: 5px;
+    background-color: #F2F2F2
+}
+
+.foot-tools .pull-left {
+    margin-top: 2px;
+}
+
+.foot-tools .pull-left .btn-circle {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    padding: 0;
+    border: none;
+}
+
+/*分页工具*/
+.table-page-tools > div {
+    margin-right: 50px;
+}
+
+.table-page-tools > select {
+    position: absolute;
+    right: 1px;
+    bottom: 4px;
+    border-radius: 0;
+    width: 50px !important;
+    height: 31px;
+    padding: 0;
+}
+
+/* *********************************** 帮助层 */
+
+.help-btn {
+    border-radius: 2px;
+    display: inline-block;
+    color: #FFF;
+}
+
+.help-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 4px;
+}
+
+/* 帮助，排序 */
+.help-sorting {
+    background: url(../images/help_12px/help_sorting12.png);
+}
+
+.help-sorting_a {
+    background: url(../images/help_12px/help_sorting_a12.png);
+}
+
+.help-sorting_e {
+    background: url(../images/help_12px/help_sorting_e12.png);
+}
+
+/* 帮助，选择 */
+.help-check_e {
+    background: url(../images/help_12px/help_check_empty12.png);
+}
+
+.help-check_a {
+    background: url(../images/help_12px/help_check_all.png);
+}
+
+/* *********************************** 侧边导航栏 */
+/* 展开,收起的按钮 */
+#sidebar-collapse {
+    display: inline-block;
+}
+
+/* *** 面包屑导航*/
+.my-breadcrumb > li:first-child i {
+    color: #000;
+    font-size: 16px;
+}
+
+.my-breadcrumb > li:nth-child(2):before {
+    content:" ";
+}
+
+.my-breadcrumb > li > a {
+    color: #777;
+    text-decoration: none;
+    cursor: default;
+}
+
+/* *** 表单编辑禁用时,背景色加深   [disabled='disabled']属性选择器 当这个属性=某值 */
+.form-horizontal [disabled='disabled'] {
+    background-color: #F0F0F0 !important;
+}
+
+.dropdown-menu {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ***************编辑层~~~********************...*/
+/**/
+.modal[isbindmv] .modal-header {
+    cursor: move;
+}
+
+/* *** 多行编辑时提示层的样式...*/
+.smarty {
+    position: absolute;
+    background-color: #FFF;
+    z-index: 999;
+    width: 92%;
+    box-shadow: 5px 5px 5px #888888;
+    border: 1px solid #CCC;
+    border-top: 1px solid #FFF;
+}
+
+.smarty div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #ccc;
+}
+
+.smarty div:hover {
+    background-color: #ccc;
+}
+
+/* 编辑层 */
+#editModal div[ng-data-input] > * {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#editModal label .required {
+    color: red;
+    margin: 0 5px 0 10px;
+    width: 8px;
+    display: inline-block;
+}
+
+#editModal .modal-lg .modal-body {
+    padding-right: 30px;
+}
+
+/* *** 详细层..*/
+#detailModal .modal-body {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+/** @gya详情左侧border去掉
+#detailModal #sg-dtl > div:last-child {
+    border-left: 1px solid #ccc;
+}*/
+
+#detailModal table td {
+    padding: 6px;
+}
+
+#detailModal .modal-body #sg-dtl > div {
+    padding: 0;
+    background-color: #FFF;
+}
+
+/************************************* table  ********************************/
+#my-data-table .table {
+    width: auto;
+    border: 0 !important;
+}
+
+#my-data-table .data-thead {
+    background-color: #F7F7F7;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #00A2E9;
+}
+
+#my-data-table .data-tbody > div {
+    display: inline-block;
+    min-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-data-table .data-tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+.data-thead th {
+    position: relative;
+    padding: 4px 4px 4px 2px !important;
+    white-space: nowrap;
+}
+#my-data-table8 .table {
+    width: auto;
+    border: 0 !important;
+}
+
+#my-data-table8 .data-thead {
+    background-color: #F7F7F7;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #00A2E9;
+}
+
+#my-data-table8 .data-tbody > div {
+    display: inline-block;
+    min-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-data-table8 .data-tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+#my-data-table9 .table {
+    width: auto;
+    border: 0 !important;
+}
+
+#my-data-table9 .data-thead {
+    background-color: #F7F7F7;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #00A2E9;
+}
+
+#my-data-table9 .data-tbody > div {
+    display: inline-block;
+    min-width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+#my-data-table9 .data-tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+/*表格,窗口线颜色*/
+.table thead.bordered-palegreen > tr > th, .modal-primary .modal-header {
+    border-bottom: 1px solid #00A2E9 !important;
+}
+
+/*表格选中效果*/
+tbody > tr.active_tr {
+    background-color: #cef1fa !important;
+}
+
+.data-tbody td {
+    padding: 2px 4px 2px 2px !important;
+    white-space: nowrap;
+}
+
+/*table 滚动 控制 */
+.data-thead {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.data-tbody {
+    overflow-x: auto;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.table > tbody td > div {
+    overflow: hidden;
+}
+
+/* *** 手动调整table宽度.*/
+
+/*调整table宽度的,提示线条*/
+#datagrid-resize-proxy {
+    position: absolute;
+    width: 2px;
+    display: none;
+    z-index: 99999;
+    top: 5px;
+    cursor: e-resize;
+    background: #aac5e7;
+}
+
+#my-data-table .table-data {
+    overflow: hidden;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    height: 20px;
+    line-height: 22px
+}
+
+/******************************高级搜索***************************************/
+/* 高级搜索*/
+#collapse-adv-search {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+#collapse-adv-search .panel-body {
+    white-space: nowrap;
+    width: 100%;
+}
+
+.adv-name {
+    margin: 6px 6px 0 0;
+    display: inline-block;
+    text-align: right;
+    width: 30%;
+}
+
+.adv-value {
+    display: inline-block;
+    width: 65%;
+}
+
+.adv-value input {
+    width: 100%;
+}
+
+.adv-range > input {
+    width: 140px;
+}
+
+#collapse-adv-search .adv-opt > button {
+    padding: 5px 12px;
+}
+
+/*展开动作图标切换*/
+#adv-search .fa {
+    display: none;
+}
+
+#adv-search[aria-expanded=true] .fa-search-minus {
+    display: inline-block;
+}
+
+#adv-search[aria-expanded=false] .fa-search-plus {
+    display: inline-block;
+}
+
+/***** angular 自定义指令 模拟select */
+
+.ng-my-select .btn {
+    height: 30px;
+    width: 100%;
+}
+
+.ng-my-select .btn > div {
+    float: left;
+}
+
+.ng-my-select .btn > i {
+    float: right;
+    border-width: 7px 3px 0;
+    margin-top: 5px;
+}
+
+.ng-my-select.selchecked .btn > div {
+    color: #858585
+}
+
+
+
+
+/* ******************************************************** table data format  **************************/
+/* *** 公共的 */
+.img-fmt {
+    margin-top: 2px;
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    background-size: 100% 100% !important;
+}
+
+/* *** simpDev*/
+.simp-dev-sta-0 {
+    background: url(../images/simp_simpdev/simp_dev_st_ok.png);
+}
+
+.simp-dev-sta-1 {
+    background: url(../images/simp_simpdev/simp_dev_st_disconnect.png);
+}
+
+/* *** uUWiFiSession
+ [["0","设备未连接服务器"],["1","设备已连接"],["2","设备能上网"],["8","断网重连"],["9","设备已发送完密码"]] */
+.vsw-session-sta-0 {
+    background: url(../images/vsw_session/vsw_session_sta_iinvalid.png);
+}
+
+.vsw-session-sta-1 {
+    background: url(../images/vsw_session/vsw_session_sta_using.png);
+}
+.vsw-session-sta-2 {
+    background: url(../images/vsw_session/vsw_session_sta_using.png);
+}
+.vsw-session-sta-8 {
+    background: url(../images/vsw_session/uuwifi_vifidev_sta_error.png);
+}
+.vsw-session-sta-9 {
+    background: url(../images/vsw_session/vsw_session_sta_using.png);
+}
+
+
+
+/* *** simpPort*/
+.simp-port-sta-0 {
+    background: url(../images/simp_sta/simp_simport_st_idle.png);
+}
+
+.simp-port-sta-1 {
+    background: url(../images/simp_sta/simp_simport_st_busy.png);
+}
+
+.simp-port-sta-2 {
+    background: url(../images/simp_sta/simp_simport_st_nosim.png);
+}
+.simp-port-sta-3 {
+    background: url(../images/simp_sta/simp_simport_st_warning.png);
+}
+/* *** GoIPDev */
+.goip-dev-sta-0 {
+    background: url(../images/goip_goipdev/goip_goipdev_st_ok.png);
+}
+
+.goip-dev-sta-2 {
+    background: url(../images/goip_goipdev/goip_goipdev_sta_warning.png);
+}
+
+.goip-dev-sta-1 {
+    background: url(../images/goip_goipdev/goip_goipdev_st_disconnect.png);
+}
+.goip-dev-simpOnline-0 {
+    background: url(../images/goip_goipdev/goip_goipdev_online_0.png);
+}
+.goip-dev-simpOnline-1 {
+    background: url(../images/goip_goipdev/goip_goipdev_online_1.png);
+}
+
+/* *** GoIPPort */
+.goip-port-sta-0 {
+    background: url(../images/goip_goipport/goip_port_sta_nocard.png);
+}
+
+.goip-port-sta-1 {
+    background: url(../images/goip_goipport/goip_port_sta_nocard.png);
+}
+
+.goip-port-sta-2 {
+    background: url(../images/goip_goipport/goip_port_sta_nocard.png);
+}
+
+.goip-port-sta-3 {
+    background: url(../images/goip_goipport/goip_port_sta_online.png);
+}
+
+.goip-port-sta-4 {
+    background: url(../images/goip_goipport/goip_port_sta_using.png);
+}
+
+.goip-port-sta-5 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+.goip-port-sta-6 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+.goip-port-sta-7 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+.goip-port-sta-8 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+.goip-port-sta-9 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+.goip-port-sta-10 {
+    background: url(../images/goip_goipport/goip_port_sta_error.png);
+}
+
+/* *** version */
+.sys-ver-sta-V {
+    background: url(../images/configure_version/configure_version_st_latest.png);
+}
+
+.sys-ver-sta-U {
+    background: url(../images/configure_version/configure_version_st_update.png);
+}
+
+.sys-ver-sta-A {
+    background: url(../images/configure_version/configure_version_st_mustupdate.png);
+}
+
+/* *** blacklist */
+.sys-bla-blo-0 {
+    background: url(../images/blacklist_blocked/configure_blacklist_bl_allow.png);
+}
+
+.sys-bla-blo-1 {
+    background: url(../images/blacklist_blocked/configure_blacklist_bl_forbid.png);
+}
+
+/* *** vpx */
+.vpx-vpx-sta-R {
+    background: url(../images/vpx_vpx/vpx_vpx_st_ok.png);
+}
+
+.vpx-vpx-sta-W {
+    background: url(../images/vpx_vpx/vpx_vpx_sta_warning.png);
+}
+
+.vpx-vpx-sta-S {
+    background: url(../images/vpx_vpx/vpx_vpx_sta_shutdown.png);
+}
+
+.vpx-vpx-sta-G {
+    background: url(../images/vpx_vpx/vpx_vpx_sta_shutingdown.png);
+}
+
+.vpx-vpx-sta-E {
+    background: url(../images/vpx_vpx/vpx_vpx_sta_error.png);
+}
+
+/* *** trunk*/
+.vpx-tru-sta-0 {
+    background: url(../images/vpx_trunk/vpx_trunk_st_ok.png);
+}
+
+.vpx-tru-sta-1 {
+    background: url(../images/vpx_trunk/vpx_trunk_st_disconnect.png);
+}
+
+.vpx-tru-sta-2 {
+    background: url(../images/vpx_trunk/vpx_trunk_st_error.png);
+}
+
+.vpx-tru-sta-3 {
+    background: url(../images/vpx_trunk/vpx_trunk_st_repair.png);
+}
+
+/* *** vsw */
+.vsw-vsw-sta-R {
+    background: url(../images/vsw_vsw/vsw_vsw_st_ok.png);
+}
+
+.vsw-vsw-sta-W {
+    background: url(../images/vsw_vsw/vsw_vsw_sta_warning.png);
+}
+
+.vsw-vsw-sta-S {
+    background: url(../images/vsw_vsw/vsw_vsw_sta_shutdown.png);
+}
+
+.vsw-vsw-sta-G {
+    background: url(../images/vsw_vsw/vsw_vsw_sta_shutingdown.png);
+}
+
+.vsw-vsw-sta-E {
+    background: url(../images/vsw_vsw/vsw_vsw_sta_error.png);
+}
+
+/* *** viFiDevice*/
+.uuw-vifi-sta-N {
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_sta_power.png);
+}
+
+.uuw-vifi-sta-E {
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_st_ok.png);
+}
+
+.uuw-vifi-sta-W {
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_sta_error.png);
+}
+
+.uuw-vifi-sta-D {
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_sta_forbid.png);
+}
+
+.uuw-vifi-sta-R {
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_sta_delect.png);
+}
+.uuw-vifi-online-0{
+	background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_online_0.png);/*设备未连接服务器*/
+}
+.uuw-vifi-online-1{
+	background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_online_1.png);/*设备已连接*/
+}
+.uuw-vifi-online-2{
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_st_ok.png);/*设备能上网*/
+}
+.uuw-vifi-online-8{
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_sta_error.png);/*断网重连*/
+}
+.uuw-vifi-online-9{
+    background: url(../images/uuwifi_vifidevice/uuwifi_vifidev_online_1.png);/*设备已发送完密码*/
+}
+
+
+/* *** globlasim*/
+.uuw-gsim-sta-0 {
+    background: url(../images/uuwifi_globalsim/uuwifi_globalsim_sta_valid.png);
+}
+
+.uuw-gsim-sta-1 {
+    background: url(../images/uuwifi_globalsim/uuwifi_globalsim_sta_invalid.png);
+}
+
+/* *** user*/
+.user-user-account-N {
+    background: url(../images/user_user/user_user_account_invalid.png);
+}
+
+.user-user-account-Y {
+    background: url(../images/user_user/user_user_account_ok.png);
+}
+
+.user-user-app-0 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-1 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-2 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-3 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-4 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-5 {
+    background: url(../images/user_user/user_user_app_invalid.png);
+}
+
+.user-user-app-11 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-12 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-13 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-14 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-19 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-21 {
+    background: url(../images/user_user/user_user_app_online.png);
+}
+
+.user-user-app-10 {
+    background: url(../images/user_user/user_user_app_offline.png);
+}
+
+.user-user-uuwifi-1 {
+    background: url(../images/user_user/user_user_uuwifi_using.png);
+}
+
+.user-user-uuwifi-0 {
+    background: url(../images/user_user/user_user_uuwifi_unused.png);
+}
+
+.user-user-uuwifi-2 {
+    background: url(../images/user_user/user_user_uuwifi_invalid.png);
+}
+
+/* *** feedback*/
+.user-fb-sta-W {
+    background: url(../images/user_feedback/user_feedback_sta_waiting.png);
+}
+
+.user-fb-sta-P {
+    background: url(../images/user_feedback/user_feedback_commited.png);
+}
+
+.user-fb-sta-C {
+    background: url(../images/user_feedback/user_feedback_sta_finish.png);
+}
+
+/* *** simcard   [["0","空闲"],["1","使用中"],["2","无卡"],["3","SIM卡故障"]] */
+.simc-simc-sta-0 {
+    background: url(../images/simcard_simcard/cdr_sms_sta_sending.png);
+}
+
+.simc-simc-sta-1 {
+    background: url(../images/simcard_simcard/cdr_sms_sta_ok.png);
+}
+
+.simc-simc-sta-2 {
+    background: url(../images/simcard_simcard/simcard_simcard_sta_invalid.png);
+}
+
+.simc-simc-sta-3 {
+    background: url(../images/simcard_simcard/cdr_sms_sta_fail.png);
+}
+
+/* *** sms*/
+.cdr-sms-sta-S {
+    background: url(../images/cdr_sms/cdr_sms_sta_ok.png);
+}
+
+.cdr-sms-sta-P {
+    background: url(../images/cdr_sms/cdr_sms_sta_sending.png);
+}
+
+.cdr-sms-sta-W {
+    background: url(../images/cdr_sms/cdr_sms_sta_wait.png);
+}
+
+.cdr-sms-sta-F {
+    background: url(../images/cdr_sms/cdr_sms_sta_fail.png);
+}
+
+/* *** rate*/
+.rate-rate-dir-2 {
+    background: url(../images/rate_rate/rate_rate_dir_double.png);
+}
+
+.rate-rate-dir-1 {
+    background: url(../images/rate_rate/rate_rate_dir_in.png);
+}
+
+.rate-rate-dir-0 {
+    background: url(../images/rate_rate/rate_rate_dir_out.png);
+}
+
+/* *** cdr*/
+.cdr-cdr-dir-I {
+    background: url(../images/cdr_cdr/cdr_cdr_dir_in.png);
+}
+
+.cdr-cdr-dir-O {
+    background: url(../images/cdr_cdr/cdr_cdr_dir_out.png);
+}
+
+/* *** area*/
+.rate-area-country-China {
+    background: url(../images/china.jpg);
+}
+
+/************************ @autor gya 最新添加  @date 16.7.27 +begin ************************************/
+.uuwifi-exchange-data {
+	background:url(../images/uuwifi_exchange.png);
+}
+/*概要信息表格边框*/
+.table-border-outlineInfo table{ 
+	border-collapse: collapse; 
+	border: 0px solid #E5E5E5; 
+} 
+.table-border-outlineInfo table td { 
+	border-top: 0; 
+	border-right: 1px solid #E5E5E5; 
+	border-bottom: 1px solid #E5E5E5; 
+	border-left: 0; 
+} 
+.table-border-outlineInfo table tr.lastrow td { 
+	border-bottom: 0; 
+} 
+.table-border-outlineInfo table tr td.lastCol { 
+	border-right: 0; 
+}
+/*灰色color字体*/
+.gray_tableModal{
+	color:gray !important;
+}
+/*概要页面-容器样式-容器高度初始化*/
+.summary-tab{
+	overflow-y:auto;
+	padding:0 20px;
+}
+
+@media only screen and (max-width: 880px){
+	/*tab标题在小屏时隐藏文字，只显示图标*/
+	.nav-tabs .active .tab-title{
+		display:inline-block !important;
+	}
+	.nav-tabs .tab-title{
+		display:none;
+	}
+	/*分页控件——小屏调整样式*/
+	.pagetools{
+		margin-right: 0px !important;
+	}
+	.pagination>li>span{
+		display: none;
+	}
+	.table-page-tools>select{
+		display: none;
+	}
+}
+/*概要信息-表格*/
+.outline-border-padding{
+	border-right: 1px solid #E5E5E5;
+	border-bottom: 1px solid #E5E5E5;
+	padding:10px;
+}
+/*强制右浮动*/
+.nav-tabs>.navbar-right{
+	float:right !important;
+}
+/**详情modal的边框设置**/
+	.detailTable{
+		border: none !important;
+	}
+	.detailTable tr:first-child>td{
+		border-top: none !important;
+	}
+	.detailTable td.text-right{
+		border-left: none !important;
+	}
+	.detailTable td.right-border-none{
+		border-right: none !important;
+	}
+/******************************************		wowtable	**********************************************/
+
+.wowtable-grid-thead-container{
+	height:36px;
+	background-color: #F7F7F7;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #00A2E9;
+}
+
+
+	
+	

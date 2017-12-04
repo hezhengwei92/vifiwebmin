@@ -1,0 +1,138 @@
+.simp-port-color-sta-0 {
+    background-color: gray;
+}
+
+.simp-port-color-sta-1 {
+    background-color: green;
+}
+
+.simp-port-color-sta-2 {
+    background-color: blue;
+}
+
+.simp-port-color-sta-3 {
+    background-color: red;
+}
+
+/****   标题*/
+.simp-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.simp-title > div {
+    margin-left: 20px;
+}
+
+/**/
+.simp-explain {
+    margin: 50px 0 15px 0;
+}
+
+/* 状态比例条 */
+.sta-bar-table {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.sta-bar-table td {
+    padding: 2px 0 !important;
+}
+
+.sta-bar {
+    width: 80px;
+    height: 18px;
+    display: inline-block;
+    color: #FFF;
+}
+
+.sta-bar-table td {
+    position: relative;
+}
+
+.sta-bar-table tr td:first-child {
+    text-align: right;
+}
+
+/**** 圆点 */
+.sta-round {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.simp-sta-table td {
+    padding: 2px !important;
+}
+
+/********************* SimPDev 状态图形数据展示..******************************/
+.simp-dev-shelf {
+    background-color: #EBEBEB;
+    display: inline-block;
+}
+
+.simp-dev-shelf > div {
+    margin: 0 25px 0 25px;
+    padding: 25px 0 25px 0;
+    background-color: white;
+}
+
+.simp-dev-shelf, .simp-dev-shelf > div {
+    border-left: 3px solid gray;
+    border-right: 3px solid gray;
+}
+
+.simp-dev {
+    border: 1px solid gray;
+    background-color: #DDD;
+    padding: 10px 15px 12px 15px;
+    margin-bottom: 5px;
+
+}
+
+.simp-dev td {
+    position: relative;
+    height: 12px;
+}
+
+.simp-dev td:hover {
+    cursor: pointer;
+}
+
+.simp-col-num {
+    text-align: center;
+    padding-left: 10px;
+    width: 30px;
+}
+
+.simp-col-sta0, .simp-col-sta1, .simp-col-sta2 {
+    width: 20px;
+    height: 5px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    border: 1px solid;
+    background-color: white;
+}
+
+.simp-col-sta0 {
+    background-color: white;
+}
+
+.simp-col-sta1 {
+    background-color: #008000;
+}
+
+.simp-col-sta2 {
+    background-color: #0000FF;
+}
+
+.simp-col-split {
+    left: 2px;
+    top: 11px;
+    position: absolute;
+    color: white;
+}
+
